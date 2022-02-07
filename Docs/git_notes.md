@@ -33,14 +33,19 @@ Initialise the repo.
 ## Add files to the repo
 
 Create some files in the directory. Then add them to the repo.  
+~~~
     $ git add file1.txt file2.txt
     $ git status
     $ git commit -m 'Added initial versions'
+~~~
 
 Have a look at the commit history.  
+~~~
     $ git log
+~~~
 
 Push the updates up to Github.  
+~~~
     $ git push -u origin main
-
+~~~
  
