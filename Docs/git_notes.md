@@ -43,6 +43,11 @@ Initialise the repo.
     $ git init
 ~~~
 
+Now add the ssh path to the remote repo.  
+~~~
+    $ git remote add origin git@github.com:marktyler72/<Github repo name>.git
+~~~
+
 ## Add files to the repo
 
 Create some files in the directory. Then add them to the repo.  
@@ -52,9 +57,19 @@ Create some files in the directory. Then add them to the repo.
     $ git commit -m 'Added initial versions'
 ~~~
 
+Remove a file you added but have not committed.
+~~~
+    $ git restore --staged <file-name>
+~~~
+
 Have a look at the commit history.  
 ~~~
     $ git log
+~~~
+
+To ignore local files that are not tracked
+~~~
+    $ git config --local status.showUntrackedFiles no
 ~~~
 
 Push the updates up to Github.  
