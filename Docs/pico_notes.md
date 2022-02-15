@@ -39,7 +39,8 @@ To use the UART as a serial port use:
 ## Use openocd to program the Pico
 To program the Pico using the OpenOCD, verify the flash worked and then reset and run the code: 
 ~~~
-    $ openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program <program_name.elf> verify reset exit"
+    $ cd build/<path-to-executable>
+    $ openocd -f ~/projects/pico/openocd/tcl/interface/raspberrypi-swd.cfg -f ~/projects/pico/openocd/tcl/target/rp2040.cfg -c "program <program_name.elf> verify reset exit"
 ~~~
 
 ## Set up VS Code to debug a Pico
