@@ -69,3 +69,17 @@ We can also use it to query a program on the local file system.
 ~~~
     $ picotool info -a <program_name.uf2>
 ~~~
+
+## Install MicroPython on the Pico
+First step is to put the Pico in BOOTSEL mode (hold down button while powering)
+Next give the command:
+~~~
+    $ sudo mount /dev/sda1
+    $ sudo cp ~/Downloads/rp2-pico-20220117-v1.18.uf2 /media/pi/pico/
+~~~
+
+You can access the REPL via the USB serial port.
+~~~
+    $ minicom -b 115200 -o -D /dev/ttyACM0
+~~~
+
