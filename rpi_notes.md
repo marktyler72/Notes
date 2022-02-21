@@ -194,7 +194,7 @@ Use the following command to enable or disable services:
 
 ## Networking ##
 
-To see the status of the network links.
+To see the status of the network  links.
 ~~~
     $ ip a
 ~~~
