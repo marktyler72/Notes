@@ -118,6 +118,13 @@ If there are merge conflicts you need to manually merge the conflicts by editing
     $ git diff <source_branch> <target_branch>
 ~~~
 
+## Fetch + Merge vs Pull
+In many cases _git fetch_ followed by a _git merge_ equals a _git pull_.
+
+_git pull_ is context sensitive, so Git will merge any pulled commits into the branch you are currently working in if it can. _git pull_ automatically merges the commits without letting you review them first.
+
+Using _git fetch_, Git gathers any commits from the target branch that do not exist in your current branch and stores them in your local repository. However, it does not merge them with your current branch. This is particularly useful if you need to keep your repository up to date, but are working on something that might break if you update your files. To integrate the commits into your master branch, you use _git merge_.
+
 ## Replacing local changes
 To roll back a file to the HEAD version. (Files already commited will be kept)
 ~~~
