@@ -3,22 +3,14 @@ Git Notes
 
 ## Configure Git
 
-Set the user name for Git  
+Set the user name and user email for git. Use the no-reply email address. 
 ~~~
     $ git config --global user.name "Mark Tyler"
-~~~
-See the currently set user name  
-~~~
-    $ git config --global user.name
-~~~
-
-Set the user email for git. Use the no-reply email address.  
-~~~
     $ git config --global user.email "99153612+marktyler72@users.noreply.github.com"
 ~~~
-See the current e-mail address  
+See the list of global config parameters.
 ~~~
-    $ git config --global user.email
+    $ git config --global --list
 ~~~
 
 Generate an ssh key to authenticate with Github  
