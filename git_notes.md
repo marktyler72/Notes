@@ -43,9 +43,15 @@ Initialise the repo.
     $ git init
 ~~~
 
-Now add the ssh path to the remote repo.  
+Now add the new repo to the remote git server. For Github this will add it to branch main.  
 ~~~
     $ git remote add origin git@github.com:marktyler72/<Github repo name>.git
+~~~
+
+## Clone a repository 
+Clone a repository from a remote repo to the local machine.
+~~~
+    $ git clone git@github.com:marktyler72/<Github repo name>.git /path/to/local/repo
 ~~~
 
 ## Add files to the repo
@@ -57,6 +63,11 @@ Create some files in the directory. Then add them to the repo.
     $ git commit -m 'Added initial versions'
 ~~~
 
+Push the updates up to Github.  
+~~~
+    $ git push -u origin main
+~~~
+ 
 Remove a file you added but have not committed.
 ~~~
     $ git restore --staged <file-name>
@@ -72,8 +83,48 @@ To ignore local files that are not tracked
     $ git config --local status.showUntrackedFiles no
 ~~~
 
-Push the updates up to Github.  
+## Branches
+Create a new branch named "feature_x" and switch to it
 ~~~
-    $ git push -u origin main
+    $ git checkout -b feature_x
 ~~~
- 
+Switch back to main
+~~~
+    $ git checkout main
+~~~
+Delete the branch
+~~~
+    $ git branch -d feature_x
+~~~
+Push the branch up to the server
+~~~
+    $ git push origin <branch>
+~~~
+
+## Update and Merge
+To update your local repository to the newest commit (fetch and merge remote changes)
+~~~
+    $ cd /path/to/working/dir
+    $ git pull
+~~~
+To merge another branch into your active branch
+~~~
+    $ git merge <branch>
+~~~
+If there are merge conflicts you need to manually merge the conflicts by editing the files. After updating then add the files. You can also look at the diffs.
+~~~
+    $ git add <filename>
+    $ git diff <source_branch> <target_branch>
+~~~
+
+## Replacing local changes
+To roll back a file to the HEAD version. (Files already commited will be kept)
+~~~
+    $ git checkout -- <filename>
+~~~
+
+To drop all your local changes and commits, fetch the latest history from the server and point your local main branch at it
+~~~
+    $ git fetch origin
+    $ git reset --hard origin/main
+~~~
