@@ -1,6 +1,13 @@
 Git Notes
 =========
 
+## Git summary
+The following diagram illustrates the relationship between the various areas and commands.
+
+
+![Git areas and commands](Git_workflow.png)
+
+
 ## Configure Git
 
 Set the user name and user email for git. Use the no-reply email address. 
@@ -106,6 +113,8 @@ To merge another branch into your active branch
 If there are merge conflicts you need to manually merge the conflicts by editing the files. After updating then add the files. You can also look at the diffs.
 ~~~
     $ git add <filename>
+    $ git diff    
+    -- OR --
     $ git diff <source_branch> <target_branch>
 ~~~
 
