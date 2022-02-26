@@ -8,7 +8,7 @@ These are notes for setting up and doing software development on a Raspberry Pi 
 Obtained the setup script and ran it as descrbed in the Getting Started With Raspberry Pi Pico book.
 ~~~
     $ wget https://raw.githubusercontent.com/raspberrypi/pico-setup/master/pico_setup.sh
-    $ chmode +x pico_setup.sh
+    $ chmod +x pico_setup.sh
     $ ./pico_setup.sh
 ~~~
 
@@ -70,6 +70,8 @@ We can also use it to query a program on the local file system.
     $ picotool info -a <program_name.uf2>
 ~~~
 
+# MicroPython
+
 ## Install MicroPython on the Pico
 First step is to put the Pico in BOOTSEL mode (hold down button while powering)
 Next give the command:
@@ -82,3 +84,33 @@ You can access the REPL via the USB serial port.
 ~~~
     $ minicom -b 115200 -o -D /dev/ttyACM0
 ~~~
+
+Also install Python rshell that enables CLI access to the Pico filesystem.
+~~~
+    $ sudo pip3 install rshell
+~~~
+
+To use it connect to the board and type one of the rshell commands.
+~~~
+    $ rshell --buffer-size=512 -p /dev/ttyACM0
+
+    $ ls -l /pyboard
+    $ cp main.py /pyboard
+    $ repl
+    >>> import main
+~~~
+
+## Setup VS Code
+Install the Pico-Go extension. Note that this requires a 64-bit OS environment.
+
+See the following for detailed info. http://pico-go.net/docs/start/quick/
+
+## Setup a new project
+Do the following steps:
+1. Create a project dir in VS Code.
+2. Set the language to Python
+3. Create a main.py file to hold the main code
+4. Crtl-Shift-P and select Pico-Go -> Configure Project. This will enable proper code-auto-completion.
+
+
+ 
