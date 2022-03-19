@@ -92,13 +92,25 @@ Also install Python rshell that enables CLI access to the Pico filesystem.
 
 To use it connect to the board and type one of the rshell commands.
 ~~~
-    $ rshell --buffer-size=512 -p /dev/ttyACM0
+    $ rshell --buffer-size=30 -a -p /dev/ttyACM0
 
     $ ls -l /pyboard
     $ cp main.py /pyboard
     $ repl
-    >>> import main
+    >>> import main.py
 ~~~
+Note: If the buffer-size is set to a bigger value (say 512) then strange behaviour can result. This includes problems copying files from the host to the Pico. Files with sizes that are multiples of 32 but not 128 bytes will hard lock the Pico. 
+
+If the board seems stuck in a loop try to soft reboot:
+~~~
+    $ rshell --buffer-size=512 -p /dev/ttyACM0
+    $ repl
+    >>> Ctrl-D
+    
+~~~
+
+If there is a problem copying a file, check to see if the file has a terminating <CR>.
+If not - add one!
 
 ## Setup VS Code
 Install the Pico-Go extension. Note that this requires a 64-bit OS environment.
