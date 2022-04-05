@@ -70,6 +70,14 @@ We can also use it to query a program on the local file system.
     $ picotool info -a <program_name.uf2>
 ~~~
 
+## Use picotool to load a new program
+Put the Pico into BOOTSEL mode. Can short the run pin to Gnd while holding down the BOOTSEL button. Remove short then release button.
+Next give the command:
+~~~
+    $ sudo picotool load -v -x flash_nuke.elf -f
+~~~
+The -f flag runs the loaded application once it is flashed. The flash_nuke application is in pico-examples/build/flash/nuke and it will zero out the memory on the board.
+
 # MicroPython
 
 ## Install MicroPython on the Pico

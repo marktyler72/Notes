@@ -21,7 +21,9 @@ Install the following from Other desktops section:
  * picom ???
  * rofi
  * rxvt-unicode
-
+ * xautolock
+ * xss-lock
+ 
 Install fonts from the Fonts section
  * fonts-dejavu
  * fonts-droid-fallback
