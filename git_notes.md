@@ -20,6 +20,11 @@ See the list of global config parameters.
     $ git config --global --list
 ~~~
 
+Set the name of the default branch to main for compatability with Github.
+~~~
+    $ git config --global init.defaultBranch main
+~~~
+
 Generate an ssh key to authenticate with Github  
 ~~~
     $ ssh-keygen -t ed25519 -C "99153612+marktyler72@users.noreply.github.com"
@@ -42,7 +47,8 @@ Initialise the repo.
     $ git init
 ~~~
 
-Now add the new repo to the remote git server. For Github this will add it to branch main.  
+Now add the new repo to the remote git server. For Github this will add it to branch main.
+Before you do this you need to create the repo on Github using the web interface!!
 ~~~
     $ git remote add origin git@github.com:marktyler72/<Github repo name>.git
 ~~~
@@ -136,3 +142,6 @@ To drop all your local changes and commits, fetch the latest history from the se
     $ git fetch origin
     $ git reset --hard origin/main
 ~~~
+
+## Dotfiles
+Use the dotfiles command instead of git to configure the dotfiles. This is a special personal configuration.
