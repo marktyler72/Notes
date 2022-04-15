@@ -211,3 +211,22 @@ Use fc-list to see the fonts that are available on the system.
   $ fc-list :style=Bold | sort      ## all bold fonts
   $ fc-list :spacing=100 lang=en family | sort      ## all monospace english fonts
 ~~~
+
+## Upgrade all packages ##
+Give the following commands. 
+~~~
+  $ sudo apt-get update
+  $ sudo apt-get upgrade
+  $ sudo rpi-update   <--- you may not want to do this last step.
+~~~
+
+Note that this does not seem to update VSCode on minor point releases. To do that you also need to do the following.
+
+## Upgrade VSCode ##
+Download the update to VSCode. Make sure to select the ARM 64-bit version!
+Install via:
+~~~
+  $ sudo apt install ~/Downloads/<filename>.deb
+  for example -
+  $ sudo apt install ~/Downloads/code_1.66.2-1649663260_arm64.deb
+~~~
