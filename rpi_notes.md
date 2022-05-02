@@ -88,7 +88,7 @@ Set the following:
 
 ## Configure lightdm ##
 
-Edit /etc/lightdm/lightdm.conf  
+Edit /etc/lightdm/lightdm.conf
 
 In the [Seat:*] section make sure the following are set / unset:
 ~~~
@@ -100,7 +100,7 @@ In the [Seat:*] section make sure the following are set / unset:
   #autologin-user=pi                   # <- turn off autologin
 ~~~
 
-Edit /etc/lightdm/lightdm-gtk-greeter.conf  
+Edit /etc/lightdm/lightdm-gtk-greeter.conf
 In the [greeter] section set the following:
 ~~~
   background=#81A9C6
@@ -130,6 +130,23 @@ Now setup the following configuration files:
 ~~~
 
 And edit all of the required resources in ~/.Xresources
+
+## Setup the swap area ##
+
+Only 100M of swap space is configured by default. Increase this as follows.
+~~~
+  $ sudo dphys-swapfile swapoff    # Turn off swap.
+  $ sudo nano /etc/dphys-swapfile  # Edit the configuration file and change the parameters as follows.
+
+  CONF_SWAPSIZE= 
+  CONF_SWAPFACTOR=2
+  CONF_MAXSWAP=
+
+  $ sudo dphys-swapfile setup     # Turn off swap.
+  $ sudo dphys-swapfile swapon     # Turn swap back on.
+~~~
+
+You should end up with a swap file of around 7G on a 4G machine.
 
 ## Properties of a window ##
 
