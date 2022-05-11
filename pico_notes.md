@@ -58,6 +58,9 @@ You will probably have to edit the .vscode/launch.json file before you can debug
     "runToEntryPoint": "main",
 ~~~
 
+Note: If you insert too many breakpoints into a program (maybe more than two) then VSCode will refuse to 
+load the program onto the Pico with a GDB error. The solution is to disable some of the breakpoints.
+
 ## Use picotool to query the code loaded on a Pico
 First step is to put the Pico in BOOTSEL mode (hold down button while powering)
 Next give the command:
