@@ -140,6 +140,28 @@ Mount it.
 Remove the standard directories in the /home/tylerm and replace them with links to the userdata areas..
   $ for i in Documents Music Music_iTunes Pictures Projects ; do rmdir --ignore-fail-on-non-empty $i ; ln -s /mnt/userdata/mat_store/$i $i ; done
 
+## System Info ##
+To view information about the system use the inxi command.
+For basic system info:
+    $ inxi -b
+
+For info about the audio subsystem:
+    $ inxi -A
+
+Disk info:
+    $inxi -D
+    
+Network interfaces:
+    $ inxi -n 
+IP network info
+    $ inxi --ip
+
+USB info:
+    $ inxi --usb
+
+Disk partitions:
+    $ inxi -ojpl
+
 ## Mint version info ##
 Find the version info for Linux Mint in /etc/linuxmint/info
 To see the version of Ubuntu it is based on see /etc/os-release
