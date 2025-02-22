@@ -9,43 +9,48 @@ Update the install on first boot. You will probably have to reboot at this point
 
 ## Tidy up installed software ##
 Go through the installed software in Software Manager and remove any applictions that are not required.
+Use the following command to remove applications:
+  $ sudo apt remove <package-name>
+
 Office
-  * Libreoffice-writer
-  * Libreoffice-calc
-  * Libreoffice-impress
-  * Libreoffice-draw
-  * Libreoffice-math
-  * Libreoffice-base-core
-  * Libreoffice-core
-  * Libreoffice-style-colibre
+  * libreoffice-writer
+  * libreoffice-calc
+  * libreoffice-impress
+  * libreoffice-draw
+  * libreoffice-math
+  * libreoffice-base-core
+  * libreoffice-core
+  * libreoffice-style-colibre
 Accessories
-  * Hplip
-  * Catfish
-  * Timeshift
+  * hplip
+  * catfish
+  * timeshift
 Graphics
-  * Simple-scan
-  * Printer-driver-gutenprint
-  * Sane-utils
+  * simple-scan
+  * printer-driver-gutenprint
+  * sane-utils
 Internet
-  * Thunderbird
-  * Transmission-gtk
-  * Youtube-dl
-  * Hexchat
-  * Network-manager-openvpn-gnome
-  * Cups
-  * Cups-ppdc
-  * Network-manager-openvpn
-  * Network-manager-pptp
-  * Pppoeconf
+  * thunderbird
+  * transmission-gtk
+  * yt-dlp
+  * hexchat
+  * network-manager-openvpn-gnome
+  * cups
+  * cups-ppdc
+  * network-manager-openvpn
+  * network-manager-pptp
+  * pppoeconf
 Programming
-  * System-config-printer-udev
+  * system-config-printer-udev
 Sound and Video
-  * Rythmbox
-  * Hypnotix
-  * Celluloid
+  * rhythmbox
+  * hypnotix
+  * celluloid
+  * speech-dispatcher
 System Tools
-  * Gufw
-  * Compizconfig-settings-manager
+  * gufw
+  * ufw
+  * compizconfig-settings-manager
   * xed
   * lvm2
   * apg
@@ -55,13 +60,14 @@ System Tools
   * ppp
   * reiserfsprogs
   * xfsprogs
-
+  * mdadm
+  * mintwelcome
   * xfce4-dict
   * thingy
 
 ## Install i3 software ##
-Install the following packages from the Software Manager:  
-  * i3  Metapackage (should drag in i3-wm, i3lock, i3status and suckless-tools)
+Install the following packages from the Software Manager:
+  * i3  (This is a metapackage (should drag in i3-wm, i3lock, i3status and suckless-tools))
   * rofi
   * i3blocks
   * htop
@@ -71,7 +77,6 @@ Install the following packages from the Software Manager:
   * cmus
   * xautolock
   * xss-lock
-  
   * git
 
 ## Install fonts from the Fonts section ##
@@ -100,13 +105,13 @@ Install the following packages from the Software Manager:
  * fonts-ubuntu
  * fonts-ubuntu-console
  * fonts-urw-base35
- * ttf-bitstream
- * ttf-mscorefonts
+ * ttf-bitstream-vera
+ * ttf-mscorefonts-installer
 
 ## Setup the dotfiles and import ##
-See the Github instructions.
+Log into Github and look at the readme in the dotfile project. Follow the instructions to set up a new host.
 
-## Copy the config files ##
+## Copy the config files ## 
 Copy the config files to ~/.config/
   * i3
   * i3blocks
