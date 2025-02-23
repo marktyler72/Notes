@@ -70,13 +70,20 @@ Install the following packages from the Software Manager:
   * i3  (This is a metapackage (should drag in i3-wm, i3lock, i3status and suckless-tools))
   * rofi
   * i3blocks
-  * htop
-  * feh
-  * scrot
-  * playerctl
-  * cmus
+  * lightdm-gtk-greeter
+  * picom
   * xautolock
   * xss-lock
+
+  * feh
+  * scrot
+  * rxvt-unicode
+  * font-manager
+ 
+  * playerctl
+  * cmus
+
+  * htop
   * git
 
 ## Install fonts from the Fonts section ##
@@ -96,7 +103,6 @@ Install the following packages from the Software Manager:
  * fonts-mononoki
  * fonts-noto-mono
  * fonts-open-sans
- * fonts-piboto
  * fonts-powerline
  * fonts-quicksand
  * fonts-roboto
@@ -112,11 +118,55 @@ Install the following packages from the Software Manager:
 Log into Github and look at the readme in the dotfile project. Follow the instructions to set up a new host.
 
 ## Copy the config files ## 
-Copy the config files to ~/.config/
+Copy the config files to ~/.config/  (This may have already been done by the dotfles step)
   * i3
   * i3blocks
   * rofi
   * nano
+
+## Configure alternatives ##
+
+Set the following applications to be the default using the update-alternatives command.
+Alternatives are linked in /etc/alternatives
+
+To see the current configuration of x-session-manager
+~~~
+ $ update-alternatives --query x-session-manager
+~~~
+
+To set it to something else 
+~~~
+ $ sudo update-alternatives --config x-terminal-emulator
+~~~
+
+Set the following:
+ * x-window-manager -> i3
+ * x-terminal-emulator -> urxvt
+ * lightdm-greeter -> lightdm-gtk-greeter.desktop
+
+## Configure lightdm ##
+
+Edit /etc/lightdm/lightdm.conf
+If the file does not exist you can create it and just add the uncommented lines and section marker
+
+In the [Seat:*] section make sure the following are set / unset:
+~~~
+  #greeter-session=pi-greeter          # <- turn off the default greeter
+  greeter-session=lightdm-gtk-greeter  # <- enable the greeter we want and allow it to show users
+  greeter-hide-users=false
+  #user-session=default                # <- make the user session an i3 session
+  user-session=i3
+  #autologin-user=pi                   # <- turn off autologin
+~~~
+
+Edit /etc/lightdm/lightdm-gtk-greeter.conf
+In the [greeter] section set the following:
+~~~
+  background=#81A9C6
+  font-name=RobotoLt 11
+  indicators=~clock;~host
+  clock-format=%H:%M
+~~~
 
 ## Font for terminal ##
 DejaVu Sans Mono Book 11
