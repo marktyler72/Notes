@@ -4,6 +4,56 @@ Pico Notes
 ## Introduction
 These are notes for setting up and doing software development on a Raspberry Pi Pico.
 
+## Install basic components
+   $ sudo apt update
+   $ sudo apt install minicom
+Download VS Code from MS then
+   $ sudo apt install ./code_1.99.3-1744761595_amd64.deb
+   $ sudo apt install gdb-multiarch
+
+## Clone the repositories
+  $ cd ~/projects
+  $ git clone git@github.com:marktyler72/mat-picolog.git ./mat-picolog
+  $ git clone git@github.com:marktyler72/mat-clog.git ./mat-clog
+  $ git clone git@github.com:carlk3/no-OS-FatFS-SD-SPI-RPi-Pico.git ./no-OS-FatFS-SD-SPI-RPi-Pico
+  $ cd mat-clog
+  $ ln -s ../no-OS-FatFS-SD-SPI-RPi-Pico .
+
+## Setup VS Code for Pico development
+Follow the instructions in chapter 3 of the Getting Started with raspberry Pi Pico book to install the 
+Raspberry Pi Pico extension for VS Code. This also downloads the SDK.
+
+You also need to install libhidapi-hidraw0 for openocd
+  $ sudo apt install libhidapi-hidraw0
+
+In order to allow the Pico to be connected via USB for programming easily then download the udev rules from
+the picotool git repostory https://github.com/raspberrypi/picotool
+Install using 
+  $ sudo cp 99-picotool.rules /etc/udev/rules.d/
+
+Also add a udev rule for the Debugprobe. Do the following:
+  $ sudo nano 50-rpi-picoprobe.rules
+
+and add the following content:
+
+# Remember to  give the following commands after any changes. 
+#  $ sudo udevadm control --reload 
+#  $ sudo udevadm trigger 
+SUBSYSTEMS=="usb", \
+    ATTRS{idVendor}=="2e8a", \
+    ATTRS{idProduct}=="000c", \
+    TAG+="uaccess" \
+    GROUP="plugdev", MODE="0660"
+ 
+After the file is created then give the following commands to activate the new rule:
+  $ sudo udevadm control --reload 
+  $ sudo udevadm trigger 
+
+
+
+
+
+## OLD Instructions ##
 ## Software SDK Setup
 Obtained the setup script and ran it as descrbed in the Getting Started With Raspberry Pi Pico book.
 ~~~
