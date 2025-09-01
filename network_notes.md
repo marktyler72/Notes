@@ -47,7 +47,9 @@ For the TPLink router the most useful pages are:
   Advanced - Network - LAN Settings  (allows IP address reservation)
   Advanced - Wireless - Statistics  (shows what band devices are using)
 
-
+## Sungrow Webpage ##
+ Log in to au.isolarcloud.com to view the inverter info.
+ 
 
 
 
