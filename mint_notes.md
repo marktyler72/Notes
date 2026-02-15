@@ -82,6 +82,7 @@ Install the following packages from the Software Manager:
  
   * playerctl
   * cmus
+  * easytag
 
   * htop
   * git
