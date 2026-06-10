@@ -1,6 +1,11 @@
 Music Notes
 ===========
 
+## Jellyfin storage ##
+The music files for Jellyfin are stored in 
+  /media/jellyfin/music
+The permissions on the individual files are -rwxrwxrwx 1 jellyfin jellyfin
+
 ## Convert a file from .m4a to .mp3 ##
 Sometimes we want to convert a file from .m4a format to .mp3. This can be useful if the tags in the original file are screwed up.
 
