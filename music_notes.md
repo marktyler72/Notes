@@ -13,6 +13,10 @@ Sometimes we want to convert a file from .m4a format to .mp3. This can be useful
 
   $ ffmpeg -i input_file.m4a -c:v copy -c:a libmp3lame -q:a 2 output_file.mp3
   
+To convert a set of files (soprano, alto, tenor and bass parts) then use
+  $ m4a_to_mp3.bash The_base_name_for_the_files
+  e.g. $ m4a_to_mp3.bash Keep_shining_on
+
 ## Edit the tags in music files ##
 First get the external disk from the Jellyfin server and plug it into the desktop then mount the disk.
   $ sudo mount /dev/sdb2 /media/tylerm/disk1
