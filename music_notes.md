@@ -1,6 +1,14 @@
 Music Notes
 ===========
 
+## Get the external harddrive from the Jellyfin server ##
+Shutdown the Jellyfin server
+  $ ssh rpi4.local
+  $ sudo shutdown -h now
+Unplug the drive and plug it into grumpy then mount it.
+  $ sudo mount /dev/sdb2 /media/tylerm/disk1
+  $ cd /media/tylerm/disk1/media/jellyfin/music/Choir/Choir\ Songs/
+  
 ## Jellyfin storage ##
 The music files for Jellyfin are stored in 
   /media/jellyfin/music
