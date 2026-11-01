@@ -42,4 +42,11 @@ Once it is done unmount the SSD.
 
   $sudo umount /media/tylerm/disk2
 
+## Local backups ##
+Mount the local backup disk - it is /dev/sda6
+
+Backup the home directory, the mat_store and /etc
+  $ sudo rsync -av /home/tylerm /media/tylerm/backup
+  $ sudo rsync -av /mnt/userdata/mat_store /media/tylerm/backup
+  $ sudo rsync -av /etc /media/tylerm/backup
 
